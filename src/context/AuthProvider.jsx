@@ -34,10 +34,7 @@ const AuthProvider = ({children}) => {
                 setCargando(false)
             }
         }
-
-        return () => {
-          return autenticarUsuario()
-        }
+        autenticarUsuario()
       }, [])
 
     const cerrarSesionAuth = () =>{

@@ -24,7 +24,15 @@ const Proyecto = () => {
     },[]);
 
     useEffect(() => {
-        socket = io(import.meta.env.VITE_BACKEND_URL);
+        socket = io(import.meta.env.VITE_BACKEND_URL, {
+            reconnectionDelay: 1000,
+            reconnection: true,
+            reconnectionAttemps: 10,
+            transports: ['websocket'],
+            agent: false,
+            upgrade: false,
+            rejectUnauthorized: false
+        });
         socket.emit('abrir proyecto', params.id);
     },[]);
 

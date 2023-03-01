@@ -8,7 +8,7 @@ const AuthProvider = ({children}) => {
 
     const navigate = useNavigate();
     const [auth, setAuth] = useState({});
-    const [cargando, setCargando] = useState(true);
+    const [cargando, setCargando] = useState(false);
     
     useEffect(() => {
         const authUsuario = async () =>{
